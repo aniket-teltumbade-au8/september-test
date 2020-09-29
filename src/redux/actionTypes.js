@@ -1,0 +1,7 @@
+export const SET_CURRENT_USER = 'SET_CURRENT_USER'
+export const CLEAR_CURRENT_USER = 'CLEAR_CURRENT_USER'
+export const ALBUM_LISTING = 'ALBUM_LISTING'
+export const ADD_TASK = 'ADD_TASK'
+export const REMOVE_TASK = 'REMOVE_TASK'
+export const UPDATE_TASK = 'UPDATE_TASK'
+export const DISPLAY_TASK = 'DISPLAY_TASK'
