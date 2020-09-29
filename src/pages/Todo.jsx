@@ -9,15 +9,17 @@ class Todo extends Component {
     updatetasktext: ""
   };
   handelAdd = () => {
-    let task = [...this.state.tasks];
-    task.push([this.state.taskid, this.state.addtasktext]);
-    let no = Number(this.state.taskid);
-    this.setState({
-      tasks: task,
-      addtasktext: null,
-      taskid: no + 1
-    });
-    this.inputEntry.value = "";
+    if (this.state.addtasktext !== null) {
+      let task = [...this.state.tasks];
+      task.push([this.state.taskid, this.state.addtasktext]);
+      let no = Number(this.state.taskid);
+      this.setState({
+        tasks: task,
+        addtasktext: null,
+        taskid: no + 1
+      });
+      this.inputEntry.value = "";
+    }
   };
   handleInput = (e) => {
     e.preventDefault();
