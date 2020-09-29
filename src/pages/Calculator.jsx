@@ -28,26 +28,26 @@ export class Calculator extends Component {
         }
     }
     handleResult=()=>{
-        if(this.state.expression1!='' && this.state.expression2!='' && this.state.operators!=''){
-            if(this.state.operators='+'){
+        if(this.state.expression1!=='' && this.state.expression2!=='' && this.state.operators!==''){
+            if(this.state.operators==='+'){
                 
                 this.setState({
                     value:Number(this.state.expression1)+Number(this.state.expression2)
                 })
             }
-            if(this.state.operators='-'){
+            if(this.state.operators==='-'){
                 
                 this.setState({
                     value:Number(this.state.expression1)-Number(this.state.expression2)
                 })
             }
-            if(this.state.operators='*'){
+            if(this.state.operators==='*'){
                 
                 this.setState({
                     value:Number(this.state.expression1)*Number(this.state.expression2)
                 })
             }
-            if(this.state.operators='/'){
+            if(this.state.operators==='/'){
                 
                 this.setState({
                     value:Number(this.state.expression1)/Number(this.state.expression2)
@@ -56,17 +56,17 @@ export class Calculator extends Component {
         }
     }
     render() {
-        return localStorage.getItem('user')?(
-            <div class="calculator">
-    <input type="text" class="calculator-screen" value={this.state.value} disabled />
-  <input type="text" class="calculator-screen" value={this.state.expression1+this.state.operators+this.state.expression2} disabled />
+        return (
+            <div className="calculator">
+    <input type="text" className="calculator-screen" value={this.state.value} disabled />
+  <input type="text" className="calculator-screen" value={this.state.expression1+this.state.operators+this.state.expression2} disabled />
   
-  <div class="calculator-keys">
+  <div className="calculator-keys">
     
-    <button type="button" class="operator" onClick={this.handleOps} value="+">+</button>
-    <button type="button" class="operator" onClick={this.handleOps} value="-">-</button>
-    <button type="button" class="operator" onClick={this.handleOps} value="*">&times;</button>
-    <button type="button" class="operator" onClick={this.handleOps} value="/">&divide;</button>
+    <button type="button" className="operator" onClick={this.handleOps} value="+">+</button>
+    <button type="button" className="operator" onClick={this.handleOps} value="-">-</button>
+    <button type="button" className="operator" onClick={this.handleOps} value="*">&times;</button>
+    <button type="button" className="operator" onClick={this.handleOps} value="/">&divide;</button>
 
     <button type="button" onClick={this.handleButton} value="7">7</button>
     <button type="button" onClick={this.handleButton} value="8">8</button>
@@ -84,11 +84,11 @@ export class Calculator extends Component {
 
 
     <button type="button" onClick={this.handleButton} value="0">0</button>
-    <button type="button" class="equal-sign" onClick={this.handleResult} value="=">=</button>
+    <button type="button" className="equal-sign" onClick={this.handleResult} value="=">=</button>
 
   </div>
 </div>
-        ):(<Link to='/login'>Login First</Link>)
+        );
     }
 }
 
